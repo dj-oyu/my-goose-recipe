@@ -20,8 +20,18 @@ prompt: |
   まず失敗するテストを書き、その後必要最小限の実装を加え、リファクタしてください。
 
 extensions:
-  - type: builtin
+  - type: stdio
     name: serena
+    cmd: uvx
+    args:
+      - --from
+      - git+https://github.com/oraios/serena
+      - serena
+      - start-mcp-server
+      - --context
+      - agent
+      - --project
+      - $(pwd)
   - type: builtin
     name: shell
 

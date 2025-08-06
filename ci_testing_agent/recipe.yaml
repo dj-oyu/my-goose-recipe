@@ -22,8 +22,18 @@ prompt: |
   - make flaky-check
 
 extensions:
-  - type: builtin
+  - type: stdio
     name: serena
+    cmd: uvx
+    args:
+      - --from
+      - git+https://github.com/oraios/serena
+      - serena
+      - start-mcp-server
+      - --context
+      - agent
+      - --project
+      - $(pwd)
   - type: builtin
     name: shell
 

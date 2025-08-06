@@ -51,8 +51,18 @@ sub_recipes:
     path: "./test_report_generator/recipe.yaml"
 
 extensions:
-  - type: builtin
+  - type: stdio
     name: serena
+    cmd: uvx
+    args:
+      - --from
+      - git+https://github.com/oraios/serena
+      - serena
+      - start-mcp-server
+      - --context
+      - agent
+      - --project
+      - $(pwd)
   - type: builtin
     name: shell
   - type: builtin
