@@ -31,7 +31,7 @@ extensions:
       - serena
       - start-mcp-server
       - --context
-      - agent
+      - desktop-app
   - type: builtin
     name: computercontroller
 
