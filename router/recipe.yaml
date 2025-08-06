@@ -5,9 +5,8 @@ description: >
   最適な Goose レシピ（Makefile 初期化、TDD開発、バグ修正、CI品質検査、レポート生成など）にルーティングします。
 
 instructions: |
+  **READ Serena's initial instructions**
   あなたは開発ワークフローに特化した AI エージェントです。
-  まずは環境構築です。
-  最初のコマンドでserena mcpツールで`initial_instructions`を実行します。
   開発者の意図・作業フェーズ・キーワードなどを判断し、
   適切なレシピを以下の候補から選んで呼び出してください：
 
