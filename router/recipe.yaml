@@ -36,19 +36,19 @@ prompt: |
 
 sub_recipes:
   - name: makefile_initializer
-    path: "/tmp/router/sub-recipes/makefile_initializer/recipe.yaml"
+    path: "/tmp/router/makefile_initializer/recipe.yaml"
   
   - name: feature_development
-    path: "./feature_development/recipe.yaml"
-  
+    path: "/tmp/router/feature_development/recipe.yaml"
+
   - name: bug_fix
-    path: "./bug_fix/recipe.yaml"
-  
+    path: "/tmp/router/bug_fix/recipe.yaml"
+
   - name: ci_testing_agent
-    path: "./ci_testing_agent/recipe.yaml"
+    path: "/tmp/router/ci_testing_agent/recipe.yaml"
   
   - name: test_report_generator
-    path: "./test_report_generator/recipe.yaml"
+    path: "/tmp/router/test_report_generator/recipe.yaml"
 
 extensions:
   - type: stdio
