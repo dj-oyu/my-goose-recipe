@@ -24,6 +24,9 @@ instructions: |
   - 「テストが通るか調べて」「flakyがあるか不安」→ ci_testing_agent
   - 「レポートを出して」「CI結果をまとめたい」→ test_report_generator
 
+  私は必要であれば環境構築を行います。
+  `.serena`ディレクトリが存在しない場合、serena mcpツールで`activate_project`を実行します。
+
 prompt: |
   開発者の依頼を読み、上記レシピの中から最適なものを1つ選んで呼び出してください。
 
@@ -61,8 +64,6 @@ extensions:
       - start-mcp-server
       - --context
       - agent
-      - --project
-      - $(pwd)
   - type: builtin
     name: computercontroller
 

@@ -29,8 +29,6 @@ extensions:
       - start-mcp-server
       - --context
       - agent
-      - --project
-      - $(pwd)
   - type: builtin
     name: computercontroller
 
