@@ -35,7 +35,7 @@ extensions:
       - --project
       - $(pwd)
   - type: builtin
-    name: shell
+    name: computercontroller
 
 activities:
   - "テストと静的解析の実行"

@@ -33,7 +33,7 @@ extensions:
       - --project
       - $(pwd)
   - type: builtin
-    name: shell
+    name: computercontroller
 
 activities:
   - "RED: バグを再現する失敗テストを書く"

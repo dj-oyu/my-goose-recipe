@@ -64,8 +64,6 @@ extensions:
       - --project
       - $(pwd)
   - type: builtin
-    name: shell
-  - type: builtin
     name: computercontroller
 
 activities:

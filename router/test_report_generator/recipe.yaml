@@ -32,7 +32,7 @@ extensions:
       - --project
       - $(pwd)
   - type: builtin
-    name: shell
+    name: computercontroller
 
 activities:
   - "テスト結果の集約と整形"
