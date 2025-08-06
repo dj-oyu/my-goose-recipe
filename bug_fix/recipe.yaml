@@ -41,3 +41,9 @@ retry:
     - type: shell
       command: make test
   on_failure: echo "❌ 修正後のテストも失敗。修正内容を再検討してください。"
+
+parameters:
+  - key: bug_report
+    input_type: string
+    description: "バグの詳細な説明。再現手順や期待される動作を含む。"
+    required: required
