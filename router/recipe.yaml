@@ -42,7 +42,7 @@ sub_recipes:
     path: "/tmp/feature_development/recipe.yaml"
   
   - name: bug_fix
-    path: "./bug_fix/recipe.yaml"
+    path: "/tmp/bug_fix/recipe.yaml"
   
   - name: ci_testing_agent
     path: "/tmp/ci_testing_agent/recipe.yaml"
