@@ -1,0 +1,42 @@
+version: 1.0.0
+title: Test Report Generator
+description: >
+  make test の出力を解析し、CI/CDやPRに添付できる形式で
+  Markdown または HTML のテストレポートを自動生成します。
+
+instructions: |
+  make test を実行し、その出力を整形して以下のようなレポートを作成してください：
+
+  - 概要：成功/失敗件数、flaky検出状況
+  - 失敗テストの一覧とエラーログ（要約）
+  - カバレッジがあればグラフや数値を表示
+  - 修正や確認が必要な箇所へのコメント提案
+
+  レポートは Markdown と HTML 両形式で出力可能としてください。
+
+prompt: |
+  最新の make test 出力をもとに、
+  Markdown形式とHTML形式のCIレポートを出力してください。
+
+extensions:
+  - type: builtin
+    name: serena
+  - type: builtin
+    name: shell
+
+activities:
+  - "テスト結果の集約と整形"
+  - "Markdownレポートの生成"
+  - "HTMLレポートの生成（コード付き）"
+
+settings:
+  goose_provider: groq
+  goose_model: openai/gpt-oss-120b
+  temperature: 0.2
+
+retry:
+  max_retries: 1
+  checks:
+    - type: shell
+      command: make test
+  on_failure: echo "❌ テスト結果が取得できませんでした。ログ出力の有無を確認してください。"

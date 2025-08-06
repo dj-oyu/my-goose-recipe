@@ -1,0 +1,45 @@
+version: 1.0.0
+title: CI Testing Quality Agent
+description: >
+  make test / lint / format-check / flaky-check を通じて、
+  コードとテストの信頼性・安定性・スタイル遵守を評価する。
+
+instructions: |
+  CI品質チェックとして以下を行ってください：
+
+  - make test: テスト通過状況の確認
+  - make lint: スタイル違反の検出
+  - make format-check: フォーマットが維持されているか
+  - make flaky-check: テストの再現性と信頼性
+
+  出力に基づき、エラーや不安定性の原因、改善提案を提示してください。
+
+prompt: |
+  以下を実行して、品質チェックと改善提案を行ってください：
+  - make test
+  - make lint
+  - make format-check
+  - make flaky-check
+
+extensions:
+  - type: builtin
+    name: serena
+  - type: builtin
+    name: shell
+
+activities:
+  - "テストと静的解析の実行"
+  - "不安定/壊れたテストの指摘"
+  - "スタイル修正案の提示"
+
+settings:
+  goose_provider: groq
+  goose_model: openai/gpt-oss-120b
+  temperature: 0.3
+
+retry:
+  max_retries: 2
+  checks:
+    - type: shell
+      command: make test && make flaky-check
+  on_failure: echo "❌ テストが不安定、または失敗しています。詳細な指摘を確認してください。"

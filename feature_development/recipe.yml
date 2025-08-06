@@ -1,0 +1,43 @@
+version: 1.0.0
+title: Feature Development with TDD
+description: >
+  ユーザーストーリーに対して RED→GREEN→REFACTOR のTDDサイクルを実行。
+  Makefileを使って統一的にテスト実行・検証を行います。
+
+instructions: |
+  RED-GREEN-REFACTOR の原則に従い、以下の流れで開発してください：
+
+  1. RED: 振る舞いを示すテストをまず書き、make test で失敗させる
+  2. GREEN: 最小限のコードでテストを通す
+  3. REFACTOR: 構造改善とリファクタを行い、テストを維持する
+
+  Makefileの test/lint/format-check を活用し、テストを通すだけでなくコード品質も確保してください。
+
+prompt: |
+  ユーザーストーリー:
+  {{user_story}}
+
+  まず失敗するテストを書き、その後必要最小限の実装を加え、リファクタしてください。
+
+extensions:
+  - type: builtin
+    name: serena
+  - type: builtin
+    name: shell
+
+activities:
+  - "RED: 失敗するテストを書く"
+  - "GREEN: 実装を通してテストを通過させる"
+  - "REFACTOR: 可読性と再利用性を高める"
+
+settings:
+  goose_provider: groq
+  goose_model: openai/gpt-oss-120b
+  temperature: 0.3
+
+retry:
+  max_retries: 2
+  checks:
+    - type: shell
+      command: make test
+  on_failure: echo "❌ テスト失敗中。REDのままREFACTORに進まないでください。"

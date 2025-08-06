@@ -1,0 +1,43 @@
+version: 1.0.0
+title: Bug Fix with TDD
+description: >
+  報告されたバグを TDD 的に修正：まず RED テストで再現し、
+  GREEN（修正）、REFACTOR（安定化）を行う。Makefile による統一的なテスト実行。
+
+instructions: |
+  バグ報告に基づいて、まず失敗するテストを作成してください（RED）。
+  その後、最小限の修正を加えてテストを通してください（GREEN）。
+  最後に、構造や可読性を改善してテストが通る状態を保ってください（REFACTOR）。
+
+  テスト実行には make test を使い、常に明示的なテスト状態で検証してください。
+  flaky/brittle なテストは避け、再現可能性を重視してください。
+
+prompt: |
+  バグレポート:
+  {{bug_report}}
+
+  このバグを TDD に基づいて修正してください。
+  まずテストで再現させ、その後で修正・リファクタしてください。
+
+extensions:
+  - type: builtin
+    name: serena
+  - type: builtin
+    name: shell
+
+activities:
+  - "RED: バグを再現する失敗テストを書く"
+  - "GREEN: テストが通るよう最小限の修正"
+  - "REFACTOR: 再発防止と構造改善を行う"
+
+settings:
+  goose_provider: groq
+  goose_model: openai/gpt-oss-120b
+  temperature: 0.3
+
+retry:
+  max_retries: 2
+  checks:
+    - type: shell
+      command: make test
+  on_failure: echo "❌ 修正後のテストも失敗。修正内容を再検討してください。"
