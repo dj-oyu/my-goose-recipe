@@ -41,3 +41,10 @@ retry:
     - type: shell
       command: make test
   on_failure: echo "❌ テスト失敗中。REDのままREFACTORに進まないでください。"
+
+
+parameters:
+  - key: user_story
+    input_type: string
+    requirement: required
+    description: "開発者からの自然言語による要望"
