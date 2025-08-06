@@ -42,7 +42,6 @@ retry:
       command: make test
   on_failure: echo "❌ テスト失敗中。REDのままREFACTORに進まないでください。"
 
-
 parameters:
   - key: user_story
     input_type: string

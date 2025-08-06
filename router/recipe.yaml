@@ -34,6 +34,33 @@ prompt: |
   - Makefileがない
   - CIチェックして
 
+sub_recipes:
+  - name: makefile_initializer
+    path: "./makefile_initializer/recipe.yaml"
+  
+  - name: feature_development
+    path: "./feature_development/recipe.yaml"
+  
+  - name: bug_fix
+    path: "./bug_fix/recipe.yaml"
+  
+  - name: ci_testing_agent
+    path: "./ci_testing_agent/recipe.yaml"
+  
+  - name: test_report_generator
+    path: "./test_report_generator/recipe.yaml"
+
+parameters:
+  - key: user_story
+    input_type: string
+    requirement: required
+    description: "開発者からの自然言語による要望"
+  
+  - key: bug_report
+    input_type: string
+    requirement: optional
+    description: "バグの詳細な説明。再現手順や期待される動作を含む。"
+
 extensions:
   - type: builtin
     name: serena
@@ -49,5 +76,5 @@ activities:
 
 settings:
   goose_provider: groq
-  goose_model: openai/gpt-oss-120b
+  goose_model: openai/gpt-oss-20b
   temperature: 0.4
