@@ -50,18 +50,6 @@ sub_recipes:
   - name: test_report_generator
     path: "./test_report_generator/recipe.yaml"
 
-parameters:
-  - key: user_story
-    input_type: string
-    requirement: required
-    description: "開発者からの自然言語による要望"
-  
-  - key: bug_report
-    input_type: string
-    requirement: optional
-    description: "バグの詳細な説明。再現手順や期待される動作を含む。"
-    default: "あとで説明するから準備ができたら質問して。"
-
 extensions:
   - type: builtin
     name: serena
