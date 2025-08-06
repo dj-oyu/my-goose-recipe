@@ -45,5 +45,5 @@ retry:
 parameters:
   - key: bug_report
     input_type: string
+    requirement: required
     description: "バグの詳細な説明。再現手順や期待される動作を含む。"
-    required: required
