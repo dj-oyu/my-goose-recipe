@@ -36,7 +36,7 @@ prompt: |
 
 sub_recipes:
   - name: makefile_initializer
-    path: "makefile_initializer/recipe.yaml"
+    path: "./makefile_initializer"
   
   - name: feature_development
     path: "./feature_development/recipe.yaml"
