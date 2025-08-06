@@ -43,6 +43,8 @@ sub_recipes:
   
   - name: bug_fix
     path: "./bug_fix/recipe.yaml"
+    values:
+      bug_report: あとで説明するから準備ができたら質問して
   
   - name: ci_testing_agent
     path: "./ci_testing_agent/recipe.yaml"
