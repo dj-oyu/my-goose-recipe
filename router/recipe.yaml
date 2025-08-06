@@ -51,3 +51,9 @@ settings:
   goose_provider: groq
   goose_model: openai/gpt-oss-120b
   temperature: 0.4
+
+parameters:
+  - key: user_request
+    input_type: string
+    requirement: required
+    description: "開発者からの自然言語による要望"
