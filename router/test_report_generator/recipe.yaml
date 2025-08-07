@@ -36,12 +36,7 @@ activities:
   - "テスト結果の集約と整形"
   - "Markdownレポートの生成"
   - "HTMLレポートの生成（コード付き）"
-
-settings:
-  goose_provider: groq
-  goose_model: openai/gpt-oss-120b
-  temperature: 0.2
-
+  
 retry:
   max_retries: 1
   checks:

@@ -38,11 +38,6 @@ activities:
   - "Makefileの構文と内容を提案"
   - "ターゲットごとの役割と使用例を出力"
 
-settings:
-  goose_provider: groq
-  goose_model: openai/gpt-oss-120b
-  temperature: 0.2
-
 retry:
   max_retries: 1
   checks:

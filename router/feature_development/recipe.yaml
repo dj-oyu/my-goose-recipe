@@ -38,11 +38,6 @@ activities:
   - "GREEN: 実装を通してテストを通過させる"
   - "REFACTOR: 可読性と再利用性を高める"
 
-settings:
-  goose_provider: groq
-  goose_model: openai/gpt-oss-120b
-  temperature: 0.3
-
 retry:
   max_retries: 2
   checks:

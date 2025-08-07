@@ -40,11 +40,6 @@ activities:
   - "不安定/壊れたテストの指摘"
   - "スタイル修正案の提示"
 
-settings:
-  goose_provider: groq
-  goose_model: openai/gpt-oss-120b
-  temperature: 0.3
-
 retry:
   max_retries: 2
   checks:

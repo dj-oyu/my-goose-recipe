@@ -71,8 +71,3 @@ activities:
   - "ユーザーの目的を分類"
   - "適切なレシピを特定"
   - "対応するレシピをロード・呼び出し"
-
-settings:
-  goose_provider: groq
-  goose_model: openai/gpt-oss-20b
-  temperature: 0.4
